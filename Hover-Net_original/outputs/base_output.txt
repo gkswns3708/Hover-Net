@@ -1,0 +1,262 @@
+run_train.py
+
+Main HoVer-Net training script.
+
+Usage:
+  run_train.py [--gpu=<id>] [--view=<dset>]
+  run_train.py (-h | --help)
+  run_train.py --version
+
+Options:
+  -h --help       Show this string.
+  --version       Show version.
+  --gpu=<id>      Comma separated GPU list. [default: 0,1,2,3]
+  --view=<dset>   Visualise images after augmentation. Choose 'train' or 'valid'.
+
+Detect #GPUS: 2
+logs/03 - save_path
+Using manual seed: 10
+Dataset train: 378
+Dataset valid: 196
+net_name: net, net_info keys: dict_keys(['desc', 'optimizer', 'lr_scheduler', 'extra_info', 'pretrained'])
+Pretrained Path:  ./pretrained/ImageNet-ResNet50-Preact_pytorch.tar
+Model `net` pretrained path: ./pretrained/ImageNet-ResNet50-Preact_pytorch.tar
+Missing Variables: 
+ ['conv_bot.weight', 'decoder.tp.u3.conva.weight', 'decoder.tp.u3.dense.units.0.preact_bna/bn.weight', 'decoder.tp.u3.dense.units.0.preact_bna/bn.bias', 'decoder.tp.u3.dense.units.0.preact_bna/bn.running_mean', 'decoder.tp.u3.dense.units.0.preact_bna/bn.running_var', 'decoder.tp.u3.dense.units.0.conv1.weight', 'decoder.tp.u3.dense.units.0.conv1/bn.weight', 'decoder.tp.u3.dense.units.0.conv1/bn.bias', 'decoder.tp.u3.dense.units.0.conv1/bn.running_mean', 'decoder.tp.u3.dense.units.0.conv1/bn.running_var', 'decoder.tp.u3.dense.units.0.conv2.weight', 'decoder.tp.u3.dense.units.1.preact_bna/bn.weight', 'decoder.tp.u3.dense.units.1.preact_bna/bn.bias', 'decoder.tp.u3.dense.units.1.preact_bna/bn.running_mean', 'decoder.tp.u3.dense.units.1.preact_bna/bn.running_var', 'decoder.tp.u3.dense.units.1.conv1.weight', 'decoder.tp.u3.dense.units.1.conv1/bn.weight', 'decoder.tp.u3.dense.units.1.conv1/bn.bias', 'decoder.tp.u3.dense.units.1.conv1/bn.running_mean', 'decoder.tp.u3.dense.units.1.conv1/bn.running_var', 'decoder.tp.u3.dense.units.1.conv2.weight', 'decoder.tp.u3.dense.units.2.preact_bna/bn.weight', 'decoder.tp.u3.dense.units.2.preact_bna/bn.bias', 'decoder.tp.u3.dense.units.2.preact_bna/bn.running_mean', 'decoder.tp.u3.dense.units.2.preact_bna/bn.running_var', 'decoder.tp.u3.dense.units.2.conv1.weight', 'decoder.tp.u3.dense.units.2.conv1/bn.weight', 'decoder.tp.u3.dense.units.2.conv1/bn.bias', 'decoder.tp.u3.dense.units.2.conv1/bn.running_mean', 'decoder.tp.u3.dense.units.2.conv1/bn.running_var', 'decoder.tp.u3.dense.units.2.conv2.weight', 'decoder.tp.u3.dense.units.3.preact_bna/bn.weight', 'decoder.tp.u3.dense.units.3.preact_bna/bn.bias', 'decoder.tp.u3.dense.units.3.preact_bna/bn.running_mean', 'decoder.tp.u3.dense.units.3.preact_bna/bn.running_var', 'decoder.tp.u3.dense.units.3.conv1.weight', 'decoder.tp.u3.dense.units.3.conv1/bn.weight', 'decoder.tp.u3.dense.units.3.conv1/bn.bias', 'decoder.tp.u3.dense.units.3.conv1/bn.running_mean', 'decoder.tp.u3.dense.units.3.conv1/bn.running_var', 'decoder.tp.u3.dense.units.3.conv2.weight', 'decoder.tp.u3.dense.units.4.preact_bna/bn.weight', 'decoder.tp.u3.dense.units.4.preact_bna/bn.bias', 'decoder.tp.u3.dense.units.4.preact_bna/bn.running_mean', 'decoder.tp.u3.dense.units.4.preact_bna/bn.running_var', 'decoder.tp.u3.dense.units.4.conv1.weight', 'decoder.tp.u3.dense.units.4.conv1/bn.weight', 'decoder.tp.u3.dense.units.4.conv1/bn.bias', 'decoder.tp.u3.dense.units.4.conv1/bn.running_mean', 'decoder.tp.u3.dense.units.4.conv1/bn.running_var', 'decoder.tp.u3.dense.units.4.conv2.weight', 'decoder.tp.u3.dense.units.5.preact_bna/bn.weight', 'decoder.tp.u3.dense.units.5.preact_bna/bn.bias', 'decoder.tp.u3.dense.units.5.preact_bna/bn.running_mean', 'decoder.tp.u3.dense.units.5.preact_bna/bn.running_var', 'decoder.tp.u3.dense.units.5.conv1.weight', 'decoder.tp.u3.dense.units.5.conv1/bn.weight', 'decoder.tp.u3.dense.units.5.conv1/bn.bias', 'decoder.tp.u3.dense.units.5.conv1/bn.running_mean', 'decoder.tp.u3.dense.units.5.conv1/bn.running_var', 'decoder.tp.u3.dense.units.5.conv2.weight', 'decoder.tp.u3.dense.units.6.preact_bna/bn.weight', 'decoder.tp.u3.dense.units.6.preact_bna/bn.bias', 'decoder.tp.u3.dense.units.6.preact_bna/bn.running_mean', 'decoder.tp.u3.dense.units.6.preact_bna/bn.running_var', 'decoder.tp.u3.dense.units.6.conv1.weight', 'decoder.tp.u3.dense.units.6.conv1/bn.weight', 'decoder.tp.u3.dense.units.6.conv1/bn.bias', 'decoder.tp.u3.dense.units.6.conv1/bn.running_mean', 'decoder.tp.u3.dense.units.6.conv1/bn.running_var', 'decoder.tp.u3.dense.units.6.conv2.weight', 'decoder.tp.u3.dense.units.7.preact_bna/bn.weight', 'decoder.tp.u3.dense.units.7.preact_bna/bn.bias', 'decoder.tp.u3.dense.units.7.preact_bna/bn.running_mean', 'decoder.tp.u3.dense.units.7.preact_bna/bn.running_var', 'decoder.tp.u3.dense.units.7.conv1.weight', 'decoder.tp.u3.dense.units.7.conv1/bn.weight', 'decoder.tp.u3.dense.units.7.conv1/bn.bias', 'decoder.tp.u3.dense.units.7.conv1/bn.running_mean', 'decoder.tp.u3.dense.units.7.conv1/bn.running_var', 'decoder.tp.u3.dense.units.7.conv2.weight', 'decoder.tp.u3.dense.blk_bna.bn.weight', 'decoder.tp.u3.dense.blk_bna.bn.bias', 'decoder.tp.u3.dense.blk_bna.bn.running_mean', 'decoder.tp.u3.dense.blk_bna.bn.running_var', 'decoder.tp.u3.convf.weight', 'decoder.tp.u2.conva.weight', 'decoder.tp.u2.dense.units.0.preact_bna/bn.weight', 'decoder.tp.u2.dense.units.0.preact_bna/bn.bias', 'decoder.tp.u2.dense.units.0.preact_bna/bn.running_mean', 'decoder.tp.u2.dense.units.0.preact_bna/bn.running_var', 'decoder.tp.u2.dense.units.0.conv1.weight', 'decoder.tp.u2.dense.units.0.conv1/bn.weight', 'decoder.tp.u2.dense.units.0.conv1/bn.bias', 'decoder.tp.u2.dense.units.0.conv1/bn.running_mean', 'decoder.tp.u2.dense.units.0.conv1/bn.running_var', 'decoder.tp.u2.dense.units.0.conv2.weight', 'decoder.tp.u2.dense.units.1.preact_bna/bn.weight', 'decoder.tp.u2.dense.units.1.preact_bna/bn.bias', 'decoder.tp.u2.dense.units.1.preact_bna/bn.running_mean', 'decoder.tp.u2.dense.units.1.preact_bna/bn.running_var', 'decoder.tp.u2.dense.units.1.conv1.weight', 'decoder.tp.u2.dense.units.1.conv1/bn.weight', 'decoder.tp.u2.dense.units.1.conv1/bn.bias', 'decoder.tp.u2.dense.units.1.conv1/bn.running_mean', 'decoder.tp.u2.dense.units.1.conv1/bn.running_var', 'decoder.tp.u2.dense.units.1.conv2.weight', 'decoder.tp.u2.dense.units.2.preact_bna/bn.weight', 'decoder.tp.u2.dense.units.2.preact_bna/bn.bias', 'decoder.tp.u2.dense.units.2.preact_bna/bn.running_mean', 'decoder.tp.u2.dense.units.2.preact_bna/bn.running_var', 'decoder.tp.u2.dense.units.2.conv1.weight', 'decoder.tp.u2.dense.units.2.conv1/bn.weight', 'decoder.tp.u2.dense.units.2.conv1/bn.bias', 'decoder.tp.u2.dense.units.2.conv1/bn.running_mean', 'decoder.tp.u2.dense.units.2.conv1/bn.running_var', 'decoder.tp.u2.dense.units.2.conv2.weight', 'decoder.tp.u2.dense.units.3.preact_bna/bn.weight', 'decoder.tp.u2.dense.units.3.preact_bna/bn.bias', 'decoder.tp.u2.dense.units.3.preact_bna/bn.running_mean', 'decoder.tp.u2.dense.units.3.preact_bna/bn.running_var', 'decoder.tp.u2.dense.units.3.conv1.weight', 'decoder.tp.u2.dense.units.3.conv1/bn.weight', 'decoder.tp.u2.dense.units.3.conv1/bn.bias', 'decoder.tp.u2.dense.units.3.conv1/bn.running_mean', 'decoder.tp.u2.dense.units.3.conv1/bn.running_var', 'decoder.tp.u2.dense.units.3.conv2.weight', 'decoder.tp.u2.dense.blk_bna.bn.weight', 'decoder.tp.u2.dense.blk_bna.bn.bias', 'decoder.tp.u2.dense.blk_bna.bn.running_mean', 'decoder.tp.u2.dense.blk_bna.bn.running_var', 'decoder.tp.u2.convf.weight', 'decoder.tp.u1.conva.weight', 'decoder.tp.u0.bn.weight', 'decoder.tp.u0.bn.bias', 'decoder.tp.u0.bn.running_mean', 'decoder.tp.u0.bn.running_var', 'decoder.tp.u0.conv.weight', 'decoder.tp.u0.conv.bias', 'decoder.np.u3.conva.weight', 'decoder.np.u3.dense.units.0.preact_bna/bn.weight', 'decoder.np.u3.dense.units.0.preact_bna/bn.bias', 'decoder.np.u3.dense.units.0.preact_bna/bn.running_mean', 'decoder.np.u3.dense.units.0.preact_bna/bn.running_var', 'decoder.np.u3.dense.units.0.conv1.weight', 'decoder.np.u3.dense.units.0.conv1/bn.weight', 'decoder.np.u3.dense.units.0.conv1/bn.bias', 'decoder.np.u3.dense.units.0.conv1/bn.running_mean', 'decoder.np.u3.dense.units.0.conv1/bn.running_var', 'decoder.np.u3.dense.units.0.conv2.weight', 'decoder.np.u3.dense.units.1.preact_bna/bn.weight', 'decoder.np.u3.dense.units.1.preact_bna/bn.bias', 'decoder.np.u3.dense.units.1.preact_bna/bn.running_mean', 'decoder.np.u3.dense.units.1.preact_bna/bn.running_var', 'decoder.np.u3.dense.units.1.conv1.weight', 'decoder.np.u3.dense.units.1.conv1/bn.weight', 'decoder.np.u3.dense.units.1.conv1/bn.bias', 'decoder.np.u3.dense.units.1.conv1/bn.running_mean', 'decoder.np.u3.dense.units.1.conv1/bn.running_var', 'decoder.np.u3.dense.units.1.conv2.weight', 'decoder.np.u3.dense.units.2.preact_bna/bn.weight', 'decoder.np.u3.dense.units.2.preact_bna/bn.bias', 'decoder.np.u3.dense.units.2.preact_bna/bn.running_mean', 'decoder.np.u3.dense.units.2.preact_bna/bn.running_var', 'decoder.np.u3.dense.units.2.conv1.weight', 'decoder.np.u3.dense.units.2.conv1/bn.weight', 'decoder.np.u3.dense.units.2.conv1/bn.bias', 'decoder.np.u3.dense.units.2.conv1/bn.running_mean', 'decoder.np.u3.dense.units.2.conv1/bn.running_var', 'decoder.np.u3.dense.units.2.conv2.weight', 'decoder.np.u3.dense.units.3.preact_bna/bn.weight', 'decoder.np.u3.dense.units.3.preact_bna/bn.bias', 'decoder.np.u3.dense.units.3.preact_bna/bn.running_mean', 'decoder.np.u3.dense.units.3.preact_bna/bn.running_var', 'decoder.np.u3.dense.units.3.conv1.weight', 'decoder.np.u3.dense.units.3.conv1/bn.weight', 'decoder.np.u3.dense.units.3.conv1/bn.bias', 'decoder.np.u3.dense.units.3.conv1/bn.running_mean', 'decoder.np.u3.dense.units.3.conv1/bn.running_var', 'decoder.np.u3.dense.units.3.conv2.weight', 'decoder.np.u3.dense.units.4.preact_bna/bn.weight', 'decoder.np.u3.dense.units.4.preact_bna/bn.bias', 'decoder.np.u3.dense.units.4.preact_bna/bn.running_mean', 'decoder.np.u3.dense.units.4.preact_bna/bn.running_var', 'decoder.np.u3.dense.units.4.conv1.weight', 'decoder.np.u3.dense.units.4.conv1/bn.weight', 'decoder.np.u3.dense.units.4.conv1/bn.bias', 'decoder.np.u3.dense.units.4.conv1/bn.running_mean', 'decoder.np.u3.dense.units.4.conv1/bn.running_var', 'decoder.np.u3.dense.units.4.conv2.weight', 'decoder.np.u3.dense.units.5.preact_bna/bn.weight', 'decoder.np.u3.dense.units.5.preact_bna/bn.bias', 'decoder.np.u3.dense.units.5.preact_bna/bn.running_mean', 'decoder.np.u3.dense.units.5.preact_bna/bn.running_var', 'decoder.np.u3.dense.units.5.conv1.weight', 'decoder.np.u3.dense.units.5.conv1/bn.weight', 'decoder.np.u3.dense.units.5.conv1/bn.bias', 'decoder.np.u3.dense.units.5.conv1/bn.running_mean', 'decoder.np.u3.dense.units.5.conv1/bn.running_var', 'decoder.np.u3.dense.units.5.conv2.weight', 'decoder.np.u3.dense.units.6.preact_bna/bn.weight', 'decoder.np.u3.dense.units.6.preact_bna/bn.bias', 'decoder.np.u3.dense.units.6.preact_bna/bn.running_mean', 'decoder.np.u3.dense.units.6.preact_bna/bn.running_var', 'decoder.np.u3.dense.units.6.conv1.weight', 'decoder.np.u3.dense.units.6.conv1/bn.weight', 'decoder.np.u3.dense.units.6.conv1/bn.bias', 'decoder.np.u3.dense.units.6.conv1/bn.running_mean', 'decoder.np.u3.dense.units.6.conv1/bn.running_var', 'decoder.np.u3.dense.units.6.conv2.weight', 'decoder.np.u3.dense.units.7.preact_bna/bn.weight', 'decoder.np.u3.dense.units.7.preact_bna/bn.bias', 'decoder.np.u3.dense.units.7.preact_bna/bn.running_mean', 'decoder.np.u3.dense.units.7.preact_bna/bn.running_var', 'decoder.np.u3.dense.units.7.conv1.weight', 'decoder.np.u3.dense.units.7.conv1/bn.weight', 'decoder.np.u3.dense.units.7.conv1/bn.bias', 'decoder.np.u3.dense.units.7.conv1/bn.running_mean', 'decoder.np.u3.dense.units.7.conv1/bn.running_var', 'decoder.np.u3.dense.units.7.conv2.weight', 'decoder.np.u3.dense.blk_bna.bn.weight', 'decoder.np.u3.dense.blk_bna.bn.bias', 'decoder.np.u3.dense.blk_bna.bn.running_mean', 'decoder.np.u3.dense.blk_bna.bn.running_var', 'decoder.np.u3.convf.weight', 'decoder.np.u2.conva.weight', 'decoder.np.u2.dense.units.0.preact_bna/bn.weight', 'decoder.np.u2.dense.units.0.preact_bna/bn.bias', 'decoder.np.u2.dense.units.0.preact_bna/bn.running_mean', 'decoder.np.u2.dense.units.0.preact_bna/bn.running_var', 'decoder.np.u2.dense.units.0.conv1.weight', 'decoder.np.u2.dense.units.0.conv1/bn.weight', 'decoder.np.u2.dense.units.0.conv1/bn.bias', 'decoder.np.u2.dense.units.0.conv1/bn.running_mean', 'decoder.np.u2.dense.units.0.conv1/bn.running_var', 'decoder.np.u2.dense.units.0.conv2.weight', 'decoder.np.u2.dense.units.1.preact_bna/bn.weight', 'decoder.np.u2.dense.units.1.preact_bna/bn.bias', 'decoder.np.u2.dense.units.1.preact_bna/bn.running_mean', 'decoder.np.u2.dense.units.1.preact_bna/bn.running_var', 'decoder.np.u2.dense.units.1.conv1.weight', 'decoder.np.u2.dense.units.1.conv1/bn.weight', 'decoder.np.u2.dense.units.1.conv1/bn.bias', 'decoder.np.u2.dense.units.1.conv1/bn.running_mean', 'decoder.np.u2.dense.units.1.conv1/bn.running_var', 'decoder.np.u2.dense.units.1.conv2.weight', 'decoder.np.u2.dense.units.2.preact_bna/bn.weight', 'decoder.np.u2.dense.units.2.preact_bna/bn.bias', 'decoder.np.u2.dense.units.2.preact_bna/bn.running_mean', 'decoder.np.u2.dense.units.2.preact_bna/bn.running_var', 'decoder.np.u2.dense.units.2.conv1.weight', 'decoder.np.u2.dense.units.2.conv1/bn.weight', 'decoder.np.u2.dense.units.2.conv1/bn.bias', 'decoder.np.u2.dense.units.2.conv1/bn.running_mean', 'decoder.np.u2.dense.units.2.conv1/bn.running_var', 'decoder.np.u2.dense.units.2.conv2.weight', 'decoder.np.u2.dense.units.3.preact_bna/bn.weight', 'decoder.np.u2.dense.units.3.preact_bna/bn.bias', 'decoder.np.u2.dense.units.3.preact_bna/bn.running_mean', 'decoder.np.u2.dense.units.3.preact_bna/bn.running_var', 'decoder.np.u2.dense.units.3.conv1.weight', 'decoder.np.u2.dense.units.3.conv1/bn.weight', 'decoder.np.u2.dense.units.3.conv1/bn.bias', 'decoder.np.u2.dense.units.3.conv1/bn.running_mean', 'decoder.np.u2.dense.units.3.conv1/bn.running_var', 'decoder.np.u2.dense.units.3.conv2.weight', 'decoder.np.u2.dense.blk_bna.bn.weight', 'decoder.np.u2.dense.blk_bna.bn.bias', 'decoder.np.u2.dense.blk_bna.bn.running_mean', 'decoder.np.u2.dense.blk_bna.bn.running_var', 'decoder.np.u2.convf.weight', 'decoder.np.u1.conva.weight', 'decoder.np.u0.bn.weight', 'decoder.np.u0.bn.bias', 'decoder.np.u0.bn.running_mean', 'decoder.np.u0.bn.running_var', 'decoder.np.u0.conv.weight', 'decoder.np.u0.conv.bias', 'decoder.hv.u3.conva.weight', 'decoder.hv.u3.dense.units.0.preact_bna/bn.weight', 'decoder.hv.u3.dense.units.0.preact_bna/bn.bias', 'decoder.hv.u3.dense.units.0.preact_bna/bn.running_mean', 'decoder.hv.u3.dense.units.0.preact_bna/bn.running_var', 'decoder.hv.u3.dense.units.0.conv1.weight', 'decoder.hv.u3.dense.units.0.conv1/bn.weight', 'decoder.hv.u3.dense.units.0.conv1/bn.bias', 'decoder.hv.u3.dense.units.0.conv1/bn.running_mean', 'decoder.hv.u3.dense.units.0.conv1/bn.running_var', 'decoder.hv.u3.dense.units.0.conv2.weight', 'decoder.hv.u3.dense.units.1.preact_bna/bn.weight', 'decoder.hv.u3.dense.units.1.preact_bna/bn.bias', 'decoder.hv.u3.dense.units.1.preact_bna/bn.running_mean', 'decoder.hv.u3.dense.units.1.preact_bna/bn.running_var', 'decoder.hv.u3.dense.units.1.conv1.weight', 'decoder.hv.u3.dense.units.1.conv1/bn.weight', 'decoder.hv.u3.dense.units.1.conv1/bn.bias', 'decoder.hv.u3.dense.units.1.conv1/bn.running_mean', 'decoder.hv.u3.dense.units.1.conv1/bn.running_var', 'decoder.hv.u3.dense.units.1.conv2.weight', 'decoder.hv.u3.dense.units.2.preact_bna/bn.weight', 'decoder.hv.u3.dense.units.2.preact_bna/bn.bias', 'decoder.hv.u3.dense.units.2.preact_bna/bn.running_mean', 'decoder.hv.u3.dense.units.2.preact_bna/bn.running_var', 'decoder.hv.u3.dense.units.2.conv1.weight', 'decoder.hv.u3.dense.units.2.conv1/bn.weight', 'decoder.hv.u3.dense.units.2.conv1/bn.bias', 'decoder.hv.u3.dense.units.2.conv1/bn.running_mean', 'decoder.hv.u3.dense.units.2.conv1/bn.running_var', 'decoder.hv.u3.dense.units.2.conv2.weight', 'decoder.hv.u3.dense.units.3.preact_bna/bn.weight', 'decoder.hv.u3.dense.units.3.preact_bna/bn.bias', 'decoder.hv.u3.dense.units.3.preact_bna/bn.running_mean', 'decoder.hv.u3.dense.units.3.preact_bna/bn.running_var', 'decoder.hv.u3.dense.units.3.conv1.weight', 'decoder.hv.u3.dense.units.3.conv1/bn.weight', 'decoder.hv.u3.dense.units.3.conv1/bn.bias', 'decoder.hv.u3.dense.units.3.conv1/bn.running_mean', 'decoder.hv.u3.dense.units.3.conv1/bn.running_var', 'decoder.hv.u3.dense.units.3.conv2.weight', 'decoder.hv.u3.dense.units.4.preact_bna/bn.weight', 'decoder.hv.u3.dense.units.4.preact_bna/bn.bias', 'decoder.hv.u3.dense.units.4.preact_bna/bn.running_mean', 'decoder.hv.u3.dense.units.4.preact_bna/bn.running_var', 'decoder.hv.u3.dense.units.4.conv1.weight', 'decoder.hv.u3.dense.units.4.conv1/bn.weight', 'decoder.hv.u3.dense.units.4.conv1/bn.bias', 'decoder.hv.u3.dense.units.4.conv1/bn.running_mean', 'decoder.hv.u3.dense.units.4.conv1/bn.running_var', 'decoder.hv.u3.dense.units.4.conv2.weight', 'decoder.hv.u3.dense.units.5.preact_bna/bn.weight', 'decoder.hv.u3.dense.units.5.preact_bna/bn.bias', 'decoder.hv.u3.dense.units.5.preact_bna/bn.running_mean', 'decoder.hv.u3.dense.units.5.preact_bna/bn.running_var', 'decoder.hv.u3.dense.units.5.conv1.weight', 'decoder.hv.u3.dense.units.5.conv1/bn.weight', 'decoder.hv.u3.dense.units.5.conv1/bn.bias', 'decoder.hv.u3.dense.units.5.conv1/bn.running_mean', 'decoder.hv.u3.dense.units.5.conv1/bn.running_var', 'decoder.hv.u3.dense.units.5.conv2.weight', 'decoder.hv.u3.dense.units.6.preact_bna/bn.weight', 'decoder.hv.u3.dense.units.6.preact_bna/bn.bias', 'decoder.hv.u3.dense.units.6.preact_bna/bn.running_mean', 'decoder.hv.u3.dense.units.6.preact_bna/bn.running_var', 'decoder.hv.u3.dense.units.6.conv1.weight', 'decoder.hv.u3.dense.units.6.conv1/bn.weight', 'decoder.hv.u3.dense.units.6.conv1/bn.bias', 'decoder.hv.u3.dense.units.6.conv1/bn.running_mean', 'decoder.hv.u3.dense.units.6.conv1/bn.running_var', 'decoder.hv.u3.dense.units.6.conv2.weight', 'decoder.hv.u3.dense.units.7.preact_bna/bn.weight', 'decoder.hv.u3.dense.units.7.preact_bna/bn.bias', 'decoder.hv.u3.dense.units.7.preact_bna/bn.running_mean', 'decoder.hv.u3.dense.units.7.preact_bna/bn.running_var', 'decoder.hv.u3.dense.units.7.conv1.weight', 'decoder.hv.u3.dense.units.7.conv1/bn.weight', 'decoder.hv.u3.dense.units.7.conv1/bn.bias', 'decoder.hv.u3.dense.units.7.conv1/bn.running_mean', 'decoder.hv.u3.dense.units.7.conv1/bn.running_var', 'decoder.hv.u3.dense.units.7.conv2.weight', 'decoder.hv.u3.dense.blk_bna.bn.weight', 'decoder.hv.u3.dense.blk_bna.bn.bias', 'decoder.hv.u3.dense.blk_bna.bn.running_mean', 'decoder.hv.u3.dense.blk_bna.bn.running_var', 'decoder.hv.u3.convf.weight', 'decoder.hv.u2.conva.weight', 'decoder.hv.u2.dense.units.0.preact_bna/bn.weight', 'decoder.hv.u2.dense.units.0.preact_bna/bn.bias', 'decoder.hv.u2.dense.units.0.preact_bna/bn.running_mean', 'decoder.hv.u2.dense.units.0.preact_bna/bn.running_var', 'decoder.hv.u2.dense.units.0.conv1.weight', 'decoder.hv.u2.dense.units.0.conv1/bn.weight', 'decoder.hv.u2.dense.units.0.conv1/bn.bias', 'decoder.hv.u2.dense.units.0.conv1/bn.running_mean', 'decoder.hv.u2.dense.units.0.conv1/bn.running_var', 'decoder.hv.u2.dense.units.0.conv2.weight', 'decoder.hv.u2.dense.units.1.preact_bna/bn.weight', 'decoder.hv.u2.dense.units.1.preact_bna/bn.bias', 'decoder.hv.u2.dense.units.1.preact_bna/bn.running_mean', 'decoder.hv.u2.dense.units.1.preact_bna/bn.running_var', 'decoder.hv.u2.dense.units.1.conv1.weight', 'decoder.hv.u2.dense.units.1.conv1/bn.weight', 'decoder.hv.u2.dense.units.1.conv1/bn.bias', 'decoder.hv.u2.dense.units.1.conv1/bn.running_mean', 'decoder.hv.u2.dense.units.1.conv1/bn.running_var', 'decoder.hv.u2.dense.units.1.conv2.weight', 'decoder.hv.u2.dense.units.2.preact_bna/bn.weight', 'decoder.hv.u2.dense.units.2.preact_bna/bn.bias', 'decoder.hv.u2.dense.units.2.preact_bna/bn.running_mean', 'decoder.hv.u2.dense.units.2.preact_bna/bn.running_var', 'decoder.hv.u2.dense.units.2.conv1.weight', 'decoder.hv.u2.dense.units.2.conv1/bn.weight', 'decoder.hv.u2.dense.units.2.conv1/bn.bias', 'decoder.hv.u2.dense.units.2.conv1/bn.running_mean', 'decoder.hv.u2.dense.units.2.conv1/bn.running_var', 'decoder.hv.u2.dense.units.2.conv2.weight', 'decoder.hv.u2.dense.units.3.preact_bna/bn.weight', 'decoder.hv.u2.dense.units.3.preact_bna/bn.bias', 'decoder.hv.u2.dense.units.3.preact_bna/bn.running_mean', 'decoder.hv.u2.dense.units.3.preact_bna/bn.running_var', 'decoder.hv.u2.dense.units.3.conv1.weight', 'decoder.hv.u2.dense.units.3.conv1/bn.weight', 'decoder.hv.u2.dense.units.3.conv1/bn.bias', 'decoder.hv.u2.dense.units.3.conv1/bn.running_mean', 'decoder.hv.u2.dense.units.3.conv1/bn.running_var', 'decoder.hv.u2.dense.units.3.conv2.weight', 'decoder.hv.u2.dense.blk_bna.bn.weight', 'decoder.hv.u2.dense.blk_bna.bn.bias', 'decoder.hv.u2.dense.blk_bna.bn.running_mean', 'decoder.hv.u2.dense.blk_bna.bn.running_var', 'decoder.hv.u2.convf.weight', 'decoder.hv.u1.conva.weight', 'decoder.hv.u0.bn.weight', 'decoder.hv.u0.bn.bias', 'decoder.hv.u0.bn.running_mean', 'decoder.hv.u0.bn.running_var', 'decoder.hv.u0.conv.weight', 'decoder.hv.u0.conv.bias']
+Detected Unknown Variables: 
+ []
+----------------EPOCH 1
+(320, 320, 3) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/logging.py_output["scalar"]["image"].shape
+------train-loss_tp_bce  : 3.54429
+------train-loss_tp_dice : 7.31731
+------train-loss_np_bce  : 1.56720
+------train-loss_np_dice : 0.79552
+------train-loss_hv_mse  : 22.80962
+------train-loss_hv_msge : 204.30129
+------train-overall_loss : 240.33522
+------train-lr-net       : 0.00010
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+(1280, 400, 3) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/logging.py_output["scalar"]["image"].shape
+------valid-np_acc    : 0.66934
+------valid-np_dice   : 0.37498
+------valid-tp_dice_0 : 0.24339
+------valid-tp_dice_1 : 0.01131
+------valid-tp_dice_2 : 0.03025
+------valid-tp_dice_3 : 0.00112
+------valid-tp_dice_4 : 0.01450
+------valid-tp_dice_5 : 0.05100
+------valid-tp_dice_6 : 0.02038
+------valid-tp_dice_7 : 0.00598
+------valid-hv_mse    : 27.34872
+----------------EPOCH 2
+(320, 320, 3) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/logging.py_output["scalar"]["image"].shape
+------train-loss_tp_bce  : 2.74192
+------train-loss_tp_dice : 6.90658
+------train-loss_np_bce  : 1.15008
+------train-loss_np_dice : 0.68454
+------train-loss_hv_mse  : 16.64039
+------train-loss_hv_msge : 128.45192
+------train-overall_loss : 156.57544
+------train-lr-net       : 0.00010
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+(1280, 400, 3) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/logging.py_output["scalar"]["image"].shape
+------valid-np_acc    : 0.82784
+------valid-np_dice   : 0.47871
+------valid-tp_dice_0 : 0.80373
+------valid-tp_dice_1 : 0.00233
+------valid-tp_dice_2 : 0.24077
+------valid-tp_dice_3 : 0.02378
+------valid-tp_dice_4 : 0.22095
+------valid-tp_dice_5 : 0.15086
+------valid-tp_dice_6 : 0.02018
+------valid-tp_dice_7 : 0.00618
+------valid-hv_mse    : 15.02698
+----------------EPOCH 3
+(320, 320, 3) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/logging.py_output["scalar"]["image"].shape
+------train-loss_tp_bce  : 2.10706
+------train-loss_tp_dice : 6.54006
+------train-loss_np_bce  : 0.84481
+------train-loss_np_dice : 0.59486
+------train-loss_hv_mse  : 11.73873
+------train-loss_hv_msge : 77.59916
+------train-overall_loss : 99.42468
+------train-lr-net       : 0.00010
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+dict_keys(['imgs', 'true_np', 'true_hv', 'prob_np', 'pred_hv', 'true_tp', 'pred_tp']) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_step_output.keys()
+imgs /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+prob_np /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_hv /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+true_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+pred_tp /mnt/Cell_Local/Hover-Net/run_utils/callbacks/base.py_key
+(1280, 400, 3) /mnt/Cell_Local/Hover-Net/run_utils/callbacks/logging.py_output["scalar"]["image"].shape
+------valid-np_acc    : 0.85745
+------valid-np_dice   : 0.60210
+------valid-tp_dice_0 : 0.89088
+------valid-tp_dice_1 : 0.00146
+------valid-tp_dice_2 : 0.27302
+------valid-tp_dice_3 : 0.08736
+------valid-tp_dice_4 : 0.36869
+------valid-tp_dice_5 : 0.10138
+------valid-tp_dice_6 : 0.05103
+------valid-tp_dice_7 : 0.00616
+------valid-hv_mse    : 7.73132
+----------------EPOCH 4
