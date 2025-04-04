@@ -49,10 +49,10 @@ class Config(object):
 
         # paths to training and validation patches
         self.train_dir_list = [
-            "/mnt/Cell_Local/Hover-Net/dataset/training_data/consep/consep/train/540x540_164x164"
+            "/mnt/Hover-Net/Hover-Net_original/dataset/training_data/consep/consep/train/540x540_164x164"
         ]
         self.valid_dir_list = [
-            "/mnt/Cell_Local/Hover-Net/dataset/training_data/consep/consep/valid/540x540_164x164"
+            "/mnt/Hover-Net/Hover-Net_original/dataset/training_data/consep/consep/valid/540x540_164x164"
         ]
 
         self.shape_info = {

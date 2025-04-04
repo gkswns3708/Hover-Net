@@ -104,7 +104,7 @@ class TrainManager(Config):
     ####
     def _get_datagen(self, batch_size, run_mode, target_gen, nr_procs=0, fold_idx=0):
         nr_procs = nr_procs if not self.debug else 0
-
+        print(target_gen, "- target_gen")
         # ! Hard assumption on file type
         file_list = []
         if run_mode == "train":
